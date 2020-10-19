@@ -51,6 +51,9 @@ for (var i = 0; i < surnames_list.length; i++) {
     }
     // ************* Print Output in HTML *************
     document.getElementsByClassName('surname');
+    // Check array in Console
+    console.log('');
+    console.log('ARRAY .getElementsByClassName :')
     console.log(document.getElementsByClassName('surname'));
     for (i = 0; i < document.getElementsByClassName('surname').length; i++) {
       document.getElementsByClassName('surname')[i].innerHTML = surnames_list[i];
