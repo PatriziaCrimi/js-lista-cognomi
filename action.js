@@ -10,17 +10,21 @@ e comunicare all'utente la posizione in cui si trova il suo cognome
 var surnames_list = ['Smith', 'Johnson', 'Brown', 'Williams', 'Miller', 'Davis', 'Anderson', 'Rodriguez', 'Taylor', 'Jackson', 'Lopez', 'Harris', 'Clark', 'Lewis', 'Robinson', 'White', 'Ford'];
 console.log('The Surnames\' List array is: ');
 console.log(surnames_list);
+console.log('');
 
 // Enter input: new user surname
 var new_surname = prompt('Please enter your surname to be added to our mailing-list.');
+// Capitalize first letter --> necessary to sorting in alphabetical order
+var caps_new_surname = new_surname.charAt(0).toUpperCase() + new_surname.slice(1);
 
 // Adding new surname to the Surname List (array)
-surnames_list.push(new_surname);
+surnames_list.push(caps_new_surname);
 
 // Check output in Console
-console.log('The new user surname is: ' + new_surname + '.');
+console.log('The new user surname is: ' + caps_new_surname + '.');
 console.log('The updated Surnames\' List array is: ');
 console.log(surnames_list);
+console.log('');
 
 // Alphabetical ordering
 surnames_list.sort();
@@ -28,12 +32,11 @@ console.log('The Surnames\' List array sorted in alphabetical order is: ');
 console.log(surnames_list);
 console.log('');
 
-
 // ************* SOLUTION NUMBER 1 - FOR LOOP *************
-console.log('*** SOLUTION NUMBER 1 - FOR LOOP ***')
-// Print Output: Position of the new user surname added to the array
-for (var i = 0; i < surnames_list.length; i++) {
-  if (surnames_list[i] === new_surname) {
+console.log('*** SOLUTION NUMBER 1 - FOR LOOP ***');
+// Print Output: Print position of the new user surname added to the array
+for (i = 0; i < surnames_list.length; i++) {
+  if (surnames_list[i] === caps_new_surname) {
     console.log('The new user surname is situated in position number ' + i + ' within the Surnames\' List array.');
     i++;
     if (i === 1) {
@@ -49,16 +52,16 @@ for (var i = 0; i < surnames_list.length; i++) {
       console.log('Your surname is the ' + i + 'th in the Surnames\' List.');
       alert('Your surname is the ' + i + 'th in the Surnames\' List.');
     }
-    // ************* Print Output in HTML *************
-    document.getElementsByClassName('surname');
-    // Check array in Console
-    console.log('');
-    console.log('ARRAY .getElementsByClassName :')
-    console.log(document.getElementsByClassName('surname'));
-    for (i = 0; i < document.getElementsByClassName('surname').length; i++) {
-      document.getElementsByClassName('surname')[i].innerHTML = surnames_list[i];
-    }
   }
+}
+// ************* Print Output in HTML *************
+document.getElementsByClassName('surname');
+// Check array in Console
+console.log('');
+console.log('ARRAY .getElementsByClassName :');
+console.log(document.getElementsByClassName('surname'));
+for (i = 0; i < document.getElementsByClassName('surname').length; i++) {
+  document.getElementsByClassName('surname')[i].innerHTML = surnames_list[i];
 }
 console.log('');
 
@@ -67,7 +70,7 @@ console.log('');
 console.log('*** SOLUTION NUMBER 2 - WHILE LOOP ***')
 i = 0;
 while (i < surnames_list.length) {
-  if (surnames_list[i] === new_surname) {
+  if (surnames_list[i] === caps_new_surname) {
     var new_surname_position = i;
     console.log('The new user surname is situated in position number ' + new_surname_position + ' within the Surnames\' List array.');
     new_surname_position++;
