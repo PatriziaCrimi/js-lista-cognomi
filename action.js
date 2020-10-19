@@ -7,7 +7,7 @@ e comunicare all'utente la posizione in cui si trova il suo cognome
 */
 
 // Initialization of variables
-var surnames_list = ['Smith', 'Johnson', 'Brown', 'Williams', 'Miller', 'Davis', 'Anderson', 'Rodriguez', 'Taylor', 'Jackson', 'White', 'Lopez', 'Harris', 'Clark', 'Lewis', 'Robinson'];
+var surnames_list = ['Smith', 'Johnson', 'Brown', 'Williams', 'Miller', 'Davis', 'Anderson', 'Rodriguez', 'Taylor', 'Jackson', 'Lopez', 'Harris', 'Clark', 'Lewis', 'Robinson', 'White', 'Ford'];
 console.log('The Surnames\' List array is: ');
 console.log(surnames_list);
 
@@ -24,7 +24,9 @@ console.log(surnames_list);
 
 // Alphabetical ordering
 surnames_list.sort();
+console.log('The Surnames\' List array sorted in alphabetical order is: ');
 console.log(surnames_list);
+console.log('');
 
 
 // ************* SOLUTION NUMBER 1 - FOR LOOP *************
@@ -46,6 +48,12 @@ for (var i = 0; i < surnames_list.length; i++) {
     } else if (i >= 4) {
       console.log('Your surname is the ' + i + 'th in the Surnames\' List.');
       alert('Your surname is the ' + i + 'th in the Surnames\' List.');
+    }
+    // ************* Print Output in HTML *************
+    document.getElementsByClassName('surname');
+    console.log(document.getElementsByClassName('surname'));
+    for (i = 0; i < document.getElementsByClassName('surname').length; i++) {
+      document.getElementsByClassName('surname')[i].innerHTML = surnames_list[i];
     }
   }
 }

@@ -1,0 +1,19 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 50px 0 30px;
+  color: #b43a47;
+  text-shadow: 3px 3px #F6D8CE;
+}
+
+#page-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: rgb(180,58,71);
+  background: linear-gradient(0deg, rgba(180,58,71,1) 19%, rgba(252,213,69,1) 100%);
+}
