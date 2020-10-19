@@ -26,7 +26,10 @@ console.log(surnames_list);
 surnames_list.sort();
 console.log(surnames_list);
 
-// Position of the new user surname added to the array
+
+// ************* SOLUTION NUMBER 1 - FOR LOOP *************
+console.log('*** SOLUTION NUMBER 1 - FOR LOOP ***')
+// Print Output: Position of the new user surname added to the array
 for (var i = 0; i < surnames_list.length; i++) {
   if (surnames_list[i] === new_surname) {
     console.log('The new user surname is situated in position number ' + i + ' within the Surnames\' List array.');
@@ -45,4 +48,31 @@ for (var i = 0; i < surnames_list.length; i++) {
       alert('Your surname is the ' + i + 'th in the Surnames\' List.');
     }
   }
+}
+console.log('');
+
+
+// ************* SOLUTION NUMBER 2 - WHILE LOOP *************
+console.log('*** SOLUTION NUMBER 2 - WHILE LOOP ***')
+i = 0;
+while (i < surnames_list.length) {
+  if (surnames_list[i] === new_surname) {
+    var new_surname_position = i;
+    console.log('The new user surname is situated in position number ' + new_surname_position + ' within the Surnames\' List array.');
+    new_surname_position++;
+    if (new_surname_position === 1) {
+      console.log('Your surname is the ' + new_surname_position + 'st in the Surnames\' List.');
+      alert('Your surname is the ' + new_surname_position + 'st in the Surnames\' List.');
+    } else if (new_surname_position === 2) {
+      console.log('Your surname is the ' + new_surname_position + 'nd in the Surnames\' List.');
+      alert('Your surname is the ' + new_surname_position + 'nd in the Surnames\' List.');
+    } else if (new_surname_position === 3) {
+      console.log('Your surname is the ' + new_surname_position + 'rd in the Surnames\' List.');
+      alert('Your surname is the ' + new_surname_position + 'rd in the Surnames\' List.');
+    } else if (new_surname_position >= 4) {
+      console.log('Your surname is the ' + new_surname_position + 'th in the Surnames\' List.');
+      alert('Your surname is the ' + new_surname_position + 'th in the Surnames\' List.');
+    }
+  }
+  i++;
 }
